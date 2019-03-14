@@ -1,60 +1,15 @@
 import React, { Component } from 'react';
-import '../scss/App.css';
-
 import Highlight, { defaultProps } from "prism-react-renderer";
-
-//! Theme
-import dracula from 'prism-react-renderer/themes/nightOwl';
-
-//! Components
 import Snippets from './Snippets';
+import {categories} from '../Constants'
+
+import '../scss/App.css';
+import dracula from 'prism-react-renderer/themes/nightOwl';
 
 const defaultCode = `
 // Your snpt will appear here
 
 `;
-
-const __ReactImp = `import React from 'react';`;
-const __ReactImpDOM = `import ReactDOM from 'react-dom';`;
-const __ReactImpComponent = `import React, { Component } from 'react';`;
-
-const __ReactImpPropTypes =
-`import React, { Component } from 'react';
-import PropTypes from 'prop-types';`
-
-const __ReactComponent =
-`import React, { Component } from 'react'
-
-export default class Snpt extends Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    )
-  }
-}`
-
-const __ComponentDidMount =
-`componentDidMount = () => {
-  
-}`
-
-const __Vue = `import Vue from 'vue';`;
-
-const categories = {
-  'import': {
-    'react': __ReactImp,
-    'react-dom': __ReactImpDOM,
-    'react-component': __ReactImpComponent,
-    'react-prop-types': __ReactImpPropTypes,
-    'vue': __Vue
-  },
-  'react': {
-    'react-component': __ReactComponent,
-    'componentDidMount': __ComponentDidMount
-  },
-}
 
 class App extends Component {
   constructor(props) {
@@ -69,7 +24,7 @@ class App extends Component {
   setCode(snpt) {
     this.setState({
       code: defaultCode + snpt,
-      footerMsg: 'Snpt copied to clipboard 👍'
+      footerMsg: 'Snpt copied to clipboard 🎉'
     })
 
     setTimeout(() => {

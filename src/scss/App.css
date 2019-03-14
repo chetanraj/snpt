@@ -57,3 +57,18 @@ html, body {
   line-height: 50px;
   text-indent: 1em;
 }
+
+@media screen and (max-width: 768px) {
+  .container pre,
+  .snippets {
+    width: 100%;
+  }
+
+  .container {
+    flex-wrap: wrap;
+  }
+
+  #footer {
+    display: none;
+  }
+}
