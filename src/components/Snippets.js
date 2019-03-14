@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import { frameworks } from '../utils/Constants'
 
 export default class Snippets extends Component {
-  setCode(code) {
+  setCode(category) {
     //! Set the code to clipboard
-    this.copyToClipboard(code)
-    this.props.onClick(code)
+    this.copyToClipboard(category.code)
+    this.props.onClick(category.code)
   }
 
   copyToClipboard(code) {
@@ -19,23 +20,23 @@ export default class Snippets extends Component {
   render() {
     return (
       <>
-        {Object.keys(this.props.categories).map(category => {
+        {Object.keys(this.props.types).map(framework => {
           return (
             <div key={Math.random()}>
-              <h2 key={Math.random()}>{category}</h2>
-              {Object.keys(this.props.categories[category]).map(type => {
-                console.log(type)
-
+              <h2 key={Math.random()}>{framework}</h2>
+              {Object.keys(this.props.types[framework]).map(subtype => {
                 return (
-                  <button
-                    id={type}
-                    key={Math.random()}
-                    className="btn-white"
-                    onClick={() =>
-                      this.setCode(this.props.categories[category][type])
-                    }>
-                    {type}
-                  </button>
+                  <>
+                    <button
+                      id={subtype}
+                      key={Math.random()}
+                      className="btn-white"
+                      onClick={() =>
+                        this.setCode(this.props.types[framework][subtype])
+                      }>
+                      {subtype}
+                    </button>
+                  </>
                 )
               })}
             </div>

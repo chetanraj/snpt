@@ -35,6 +35,26 @@ html, body {
   font-size: 18px;
 }
 
+.frameworks {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.frameworks li:first-child {
+  margin-left: 0;
+}
+
+.frameworks li {
+  list-style-type: none;
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.frameworks li.active {
+  text-decoration: underline;
+}
+
 .btn-white {
   border: 0 none;
   background: #fff;
