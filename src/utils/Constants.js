@@ -41,7 +41,7 @@ export const types = {
       }
     },
     'components, state': {
-      'react-component': {
+      component: {
         code: __ReactComponent,
         type: 'react'
       },
