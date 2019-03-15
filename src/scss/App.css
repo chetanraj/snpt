@@ -51,6 +51,15 @@ html, body {
   cursor: pointer;
 }
 
+.frameworks li svg {
+  width: 25px;
+  vertical-align: middle;
+}
+
+.frameworks li svg.svg-icon-vue {
+  width: 20px;
+}
+
 .frameworks li.active {
   text-decoration: underline;
 }

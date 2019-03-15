@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import Snippets from './Snippets'
 import { frameworks, types } from '../utils/Constants'
-
+import { IconReact, IconVue } from '../icons/'
 import '../scss/App.css'
 import dracula from 'prism-react-renderer/themes/nightOwl'
 
@@ -23,10 +23,9 @@ class App extends Component {
     }
   }
 
-  componentDidMount = () => {
-    let __types = types
-
-    console.log(__types[this.state.framework])
+  icons = {
+    react: IconReact,
+    vue: IconVue
   }
 
   setCode(snpt) {
@@ -46,6 +45,11 @@ class App extends Component {
     this.setState({ framework })
   }
 
+  renderIcon(framework) {
+    const TagName = this.icons[framework]
+    return <TagName className={`svg-icon-${framework}`} />
+  }
+
   render() {
     return (
       <div className="snpt">
@@ -61,6 +65,7 @@ class App extends Component {
                       }
                       onClick={() => this.setFramework(framework)}
                       key={Math.random()}>
+                      {this.renderIcon(framework)}
                       {framework}
                     </li>
                   )
