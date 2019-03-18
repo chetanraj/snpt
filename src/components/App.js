@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
+import { Helmet } from 'react-helmet'
 import Snippets from './Snippets'
 import { frameworks, types } from '../utils/Constants'
 import { IconReact, IconVue } from '../icons/'
+import Snpt from '../assets/snpt.png'
 import '../scss/snpt.scss'
 import dracula from 'prism-react-renderer/themes/nightOwl'
 
@@ -53,6 +55,17 @@ class App extends Component {
   render() {
     return (
       <div className="snpt">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Snpt</title>
+          <meta name="author" content="Chetan Raj <chetan.narian@gmail.com>" />
+          <meta name="description" content="Code snippets made easy." />
+          <meta name="og:title" content="Snpt - Code snippets made easy." />
+          <meta name="og:type" content="website" />
+          <meta name="og:description" content="Code snippets made easy." />
+          <meta name="og:image" content={Snpt} />
+          <meta name="viewport" content="width=device-width, maximum-scale=1" />
+        </Helmet>
         <div className="container">
           <div className="snippets">
             <header>
