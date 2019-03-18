@@ -1,6 +1,8 @@
-html, body {
+html,
+body {
   font-family: 'Roboto Mono', monospace;
   margin: 0;
+  color: #222;
 }
 
 .mt-0 {
@@ -49,6 +51,7 @@ html, body {
   list-style-type: none;
   margin-left: 1em;
   cursor: pointer;
+  position: relative;
 }
 
 .frameworks li svg {
@@ -60,8 +63,27 @@ html, body {
   width: 20px;
 }
 
-.frameworks li.active {
-  text-decoration: underline;
+.frameworks li:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #222;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.frameworks li:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.frameworks li.active:before {
+  visibility: visible;
+  transform: scaleX(1);
 }
 
 .btn-white {
@@ -70,7 +92,7 @@ html, body {
   padding: 1em;
   border-radius: 4px;
   font-size: 16px;
-  margin: .4em;
+  margin: 0.4em;
   cursor: pointer;
   outline: none;
 }

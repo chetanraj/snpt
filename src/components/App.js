@@ -3,7 +3,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer'
 import Snippets from './Snippets'
 import { frameworks, types } from '../utils/Constants'
 import { IconReact, IconVue } from '../icons/'
-import '../scss/App.css'
+import '../scss/snpt.scss'
 import dracula from 'prism-react-renderer/themes/nightOwl'
 
 const defaultCode = `
@@ -46,8 +46,8 @@ class App extends Component {
   }
 
   renderIcon(framework) {
-    const TagName = this.icons[framework]
-    return <TagName className={`svg-icon-${framework}`} />
+    // const TagName = this.icons[framework]
+    return null
   }
 
   render() {
@@ -61,7 +61,7 @@ class App extends Component {
                   return (
                     <li
                       className={
-                        this.state.framework == framework ? 'active' : ''
+                        this.state.framework === framework ? 'active' : ''
                       }
                       onClick={() => this.setFramework(framework)}
                       key={Math.random()}>

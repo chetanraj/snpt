@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { frameworks } from '../utils/Constants'
 
 export default class Snippets extends Component {
   setCode(category) {
