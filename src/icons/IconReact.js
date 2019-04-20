@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const IconReact = ({ className }) => (
   <svg
@@ -25,5 +25,5 @@ const IconReact = ({ className }) => (
       fill="#53C1DE"
     />
   </svg>
-)
-export default IconReact
+);
+export default IconReact;

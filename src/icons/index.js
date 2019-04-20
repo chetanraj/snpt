@@ -1,2 +1,2 @@
-export { default as IconReact } from './IconReact'
-export { default as IconVue } from './IconVue'
+export { default as IconReact } from './IconReact';
+export { default as IconVue } from './IconVue';

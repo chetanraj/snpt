@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const IconVue = ({ className }) => (
   <svg
@@ -14,5 +14,5 @@ const IconVue = ({ className }) => (
       d="M120.83 0L98.16 39.26 75.49 0H39.26l58.9 102.01L157.06 0h-36.23z"
     />
   </svg>
-)
-export default IconVue
+);
+export default IconVue;

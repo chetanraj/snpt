@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class Snippets extends Component {
   setCode(category) {
     //! Set the code to clipboard
-    this.copyToClipboard(category.code)
-    this.props.onClick(category.code)
+    this.copyToClipboard(category.code);
+    this.props.onClick(category.code);
   }
 
   copyToClipboard(code) {
-    const textField = document.createElement('textarea')
-    textField.innerText = code
-    document.body.appendChild(textField)
-    textField.select()
-    document.execCommand('copy')
-    textField.remove()
+    const textField = document.createElement('textarea');
+    textField.innerText = code;
+    document.body.appendChild(textField);
+    textField.select();
+    document.execCommand('copy');
+    textField.remove();
   }
 
   render() {
@@ -36,12 +36,12 @@ export default class Snippets extends Component {
                       {subtype}
                     </button>
                   </>
-                )
+                );
               })}
             </div>
-          )
+          );
         })}
       </>
-    )
+    );
   }
 }

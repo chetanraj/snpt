@@ -1,55 +1,55 @@
-import React, { Component } from 'react'
-import Highlight, { defaultProps } from 'prism-react-renderer'
-import { Helmet } from 'react-helmet'
-import Snippets from './Snippets'
-import { frameworks, types } from '../utils/Constants'
-import { IconReact, IconVue } from '../icons/'
-import Snpt from '../assets/snpt.png'
-import '../scss/snpt.scss'
-import dracula from 'prism-react-renderer/themes/nightOwl'
+import React, { Component } from 'react';
+import Highlight, { defaultProps } from 'prism-react-renderer';
+import { Helmet } from 'react-helmet';
+import Snippets from './Snippets';
+import { frameworks, types } from '../utils/Constants';
+import { IconReact, IconVue } from '../icons/';
+import Snpt from '../assets/snpt.png';
+import '../scss/snpt.scss';
+import dracula from 'prism-react-renderer/themes/nightOwl';
 
 const defaultCode = `
 // Your snpt will appear here
 
-`
+`;
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       footerMsg: '',
       framework: 'react',
       code: defaultCode,
       types: []
-    }
+    };
   }
 
   icons = {
     react: IconReact,
     vue: IconVue
-  }
+  };
 
   setCode(snpt) {
     this.setState({
       code: defaultCode + snpt,
       footerMsg: 'Snpt copied to clipboard 🎉'
-    })
+    });
 
     setTimeout(() => {
       this.setState({
         footerMsg: ''
-      })
-    }, 3000)
+      });
+    }, 3000);
   }
 
   setFramework(framework) {
-    this.setState({ framework })
+    this.setState({ framework });
   }
 
   renderIcon(framework) {
     // const TagName = this.icons[framework]
-    return null
+    return null;
   }
 
   render() {
@@ -81,7 +81,7 @@ class App extends Component {
                       {this.renderIcon(framework)}
                       {framework}
                     </li>
-                  )
+                  );
                 })}
               </ul>
             </header>
@@ -113,8 +113,8 @@ class App extends Component {
           </>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;

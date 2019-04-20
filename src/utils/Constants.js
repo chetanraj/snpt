@@ -1,8 +1,11 @@
-const __ReactImp = `import React from 'react';`
-const __ReactImpDOM = `import ReactDOM from 'react-dom';`
-const __ReactImpComponent = `import React, { Component } from 'react';`
+/*
+ * React
+ */
+const __ReactImp = `import React from 'react';`;
+const __ReactImpDOM = `import ReactDOM from 'react-dom';`;
+const __ReactImpComponent = `import React, { Component } from 'react';`;
 const __ReactImpPropTypes = `import React, { Component } from 'react';
-import PropTypes from 'prop-types';`
+import PropTypes from 'prop-types';`;
 const __ReactComponent = `import React, { Component } from 'react'
 
 export default class Snpt extends Component {
@@ -13,16 +16,42 @@ export default class Snpt extends Component {
       </div>
     )
   }
-}`
+}`;
 const __ComponentDidMount = `componentDidMount = () => {
   
-}`
-const __state = `this.state = {}`
+}`;
+const __state = `this.state = {}`;
 const __setState = `this.setState({ 
   key: value
-})`
+})`;
 
-const __VueImp = `import Vue from 'vue';`
+/*
+ * Vue
+ */
+const __VueImp = `import Vue from 'vue';`;
+
+/*
+ * Axios
+ */
+const __AxiosGET = `axios.get('')
+.then(function (response) {
+  // handle success
+  console.log(response);
+})
+.catch(function (error) {
+  // handle error
+  console.log(error);
+});`;
+
+const __AxiosPOST = `axios.post('', { })
+.then(function (response) {
+  // handle success
+  console.log(response);
+})
+.catch(function (error) {
+  // handle error
+  console.log(error);
+});`;
 
 export const types = {
   react: {
@@ -65,7 +94,17 @@ export const types = {
         code: __VueImp
       }
     }
+  },
+  axios: {
+    'HTTP methods': {
+      get: {
+        code: __AxiosGET
+      },
+      post: {
+        code: __AxiosPOST
+      }
+    }
   }
-}
+};
 
-export const frameworks = ['react', 'vue']
+export const frameworks = ['react', 'vue', 'axios'];
