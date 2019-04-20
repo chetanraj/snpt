@@ -20,6 +20,18 @@ export default class Snpt extends Component {
 const __ComponentDidMount = `componentDidMount = () => {
   
 }`;
+
+const __constructor = `constructor(props) {
+  super(props);
+
+}`;
+const __constructorWithState = `constructor(props) {
+  super(props);
+
+  this.state = {
+     
+  }
+}`;
 const __state = `this.state = {}`;
 const __setState = `this.setState({ 
   key: value
@@ -76,6 +88,14 @@ export const types = {
       },
       componentDidMount: {
         code: __ComponentDidMount,
+        type: 'react'
+      },
+      constructor: {
+        code: __constructor,
+        type: 'react'
+      },
+      constructorWithState: {
+        code: __constructorWithState,
         type: 'react'
       },
       state: {

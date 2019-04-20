@@ -1,0 +1,15 @@
+{
+    "rules": {
+        "color-hex-case": "lower",
+        "block-no-empty": true,
+        "number-leading-zero": "never",
+        "declaration-colon-space-after": "always",
+        "declaration-colon-space-before": "never",
+        "color-hex-length": "short",
+        "indentation": 2,
+        "string-quotes": "double",
+        "color-no-invalid-hex": true,
+        "no-extra-semicolons": true,
+        "no-duplicate-selectors": true
+    }
+}

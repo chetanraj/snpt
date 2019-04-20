@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   margin: 0;
   color: #222;
 }
@@ -64,7 +64,7 @@ body {
 }
 
 .frameworks li:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 2px;
@@ -73,7 +73,7 @@ body {
   background-color: #222;
   visibility: hidden;
   transform: scaleX(0);
-  transition: all 0.3s ease-in-out 0s;
+  transition: all .3s ease-in-out 0s;
 }
 
 .frameworks li:hover:before {
@@ -92,7 +92,7 @@ body {
   padding: 1em;
   border-radius: 4px;
   font-size: 16px;
-  margin: 0.4em;
+  margin: .4em;
   cursor: pointer;
   outline: none;
 }
