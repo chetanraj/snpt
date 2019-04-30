@@ -4,8 +4,9 @@
 const __ReactImp = `import React from 'react';`;
 const __ReactImpDOM = `import ReactDOM from 'react-dom';`;
 const __ReactImpComponent = `import React, { Component } from 'react';`;
-const __ReactImpPropTypes = `import React, { Component } from 'react';
+const __ReactImpReactAndPropTypes = `import React, { Component } from 'react';
 import PropTypes from 'prop-types';`;
+const __ReactImpPropTypes = `import PropTypes from 'prop-types';`;
 const __ReactComponent = `import React, { Component } from 'react'
 
 export default class Snpt extends Component {
@@ -18,6 +19,15 @@ export default class Snpt extends Component {
   }
 }`;
 const __ComponentDidMount = `componentDidMount = () => {
+  
+}`;
+const __ShouldComponentUpdate = `shouldComponentUpdate(nextProps, nextState) {
+  
+}`;
+const __ComponentDidUpdate = `componentDidUpdate(prevProps, prevState) {
+  
+}`;
+const __ComponentWillUnMount = `componentWillUnmount = () => {
   
 }`;
 
@@ -33,9 +43,12 @@ const __constructorWithState = `constructor(props) {
   }
 }`;
 const __state = `this.state = {}`;
-const __setState = `this.setState({ 
-  key: value
-})`;
+const __setState = `this.setState({ })`;
+
+/*
+ * Redux
+ */
+const __ReduxImp = `import { connect } from 'react-redux';`;
 
 /*
  * Vue
@@ -77,17 +90,16 @@ export const types = {
       'react-component': {
         code: __ReactImpComponent
       },
-      'react-prop-types': {
+      'prop-types': {
         code: __ReactImpPropTypes
+      },
+      'react-prop-types': {
+        code: __ReactImpReactAndPropTypes
       }
     },
     'components, state': {
       component: {
         code: __ReactComponent,
-        type: 'react'
-      },
-      componentDidMount: {
-        code: __ComponentDidMount,
         type: 'react'
       },
       constructor: {
@@ -105,6 +117,29 @@ export const types = {
       setState: {
         code: __setState,
         type: 'react'
+      },
+      componentDidMount: {
+        code: __ComponentDidMount,
+        type: 'react'
+      },
+      shouldComponentUpdate: {
+        code: __ShouldComponentUpdate,
+        type: 'react'
+      },
+      componentDidUpdate: {
+        code: __ComponentDidUpdate,
+        type: 'react'
+      },
+      componentWillUnmount: {
+        code: __ComponentWillUnMount,
+        type: 'react'
+      }
+    }
+  },
+  redux: {
+    import: {
+      redux: {
+        code: __ReduxImp
       }
     }
   },
@@ -127,4 +162,4 @@ export const types = {
   }
 };
 
-export const frameworks = ['react', 'vue', 'axios'];
+export const frameworks = ['react', 'redux', 'vue', 'axios'];

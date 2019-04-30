@@ -9,7 +9,11 @@ import '../scss/snpt.scss';
 import dracula from 'prism-react-renderer/themes/nightOwl';
 
 const defaultCode = `
-// Your snpt will appear here
+/* 
+ * Click on any button on the left
+ * Your snpt will appear here
+ *
+ */
 
 `;
 
@@ -58,12 +62,26 @@ class App extends Component {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Snpt</title>
+
+          <meta name="title" content="Snpt" />
           <meta name="author" content="Chetan Raj <chetan.narian@gmail.com>" />
           <meta name="description" content="Code snippets made easy." />
-          <meta name="og:title" content="Snpt - Code snippets made easy." />
-          <meta name="og:type" content="website" />
-          <meta name="og:description" content="Code snippets made easy." />
-          <meta name="og:image" content={Snpt} />
+
+          <meta property="og:title" content="Snpt - Code snippets made easy." />
+          <meta property="og:url" content="https://snpt.netlify.com/" />
+          <meta property="og:type" content="website" />
+          <meta property="og:description" content="Code snippets made easy." />
+          <meta property="og:image" content={Snpt} />
+
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content="https://snpt.netlify.com/" />
+          <meta property="twitter:title" content="Snpt" />
+          <meta
+            property="twitter:description"
+            content="Code snippets made easy."
+          />
+          <meta property="twitter:image" content={Snpt} />
+
           <meta name="viewport" content="width=device-width, maximum-scale=1" />
         </Helmet>
         <div className="container">
