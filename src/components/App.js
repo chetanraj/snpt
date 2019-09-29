@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import { Helmet } from 'react-helmet';
 import Snippets from './Snippets';
 import { frameworks, types } from '../utils/Constants';
 import { IconReact, IconVue } from '../icons/';
-import Snpt from '../assets/snpt.png';
 import '../scss/snpt.scss';
 import dracula from 'prism-react-renderer/themes/nightOwl';
 
@@ -59,31 +57,6 @@ class App extends Component {
   render() {
     return (
       <div className="snpt">
-        <Helmet>
-          <meta charSet="utf-8" />
-          <title>Snpt - A simple snippets app.</title>
-
-          <meta name="title" content="Snpt" />
-          <meta name="author" content="Chetan Raj <chetan.narian@gmail.com>" />
-          <meta name="description" content="✂️A simple snippets app." />
-
-          <meta property="og:title" content="Snpt - ✂️A simple snippets app." />
-          <meta property="og:url" content="https://snpt.netlify.com/" />
-          <meta property="og:type" content="website" />
-          <meta property="og:description" content="✂️A simple snippets app." />
-          <meta property="og:image" content={Snpt} />
-
-          <meta property="twitter:card" content="summary_large_image" />
-          <meta property="twitter:url" content="https://snpt.netlify.com/" />
-          <meta property="twitter:title" content="Snpt" />
-          <meta
-            property="twitter:description"
-            content="✂️A simple snippets app."
-          />
-          <meta property="twitter:image" content={Snpt} />
-
-          <meta name="viewport" content="width=device-width, maximum-scale=1" />
-        </Helmet>
         <div className="container">
           <div className="snippets">
             <header>
