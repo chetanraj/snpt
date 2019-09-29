@@ -1,7 +1,11 @@
 {
   "name": "snpt",
   "version": "0.1.0",
+  "description": "✂️A simple snippets app.",
+  "author": "Chetan Raj <chetan.narian@gmail.com> (https://chetanraj.in/)",
+  "repository": "https://github.com/chetanraj/snpt",
   "private": true,
+  "license": "MIT",
   "dependencies": {
     "node-sass": "^4.11.0",
     "react": "^16.8.4",
