@@ -61,16 +61,16 @@ class App extends Component {
       <div className="snpt">
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Snpt</title>
+          <title>Snpt - A simple snippets app.</title>
 
           <meta name="title" content="Snpt" />
           <meta name="author" content="Chetan Raj <chetan.narian@gmail.com>" />
-          <meta name="description" content="Code snippets made easy." />
+          <meta name="description" content="✂️A simple snippets app." />
 
-          <meta property="og:title" content="Snpt - Code snippets made easy." />
+          <meta property="og:title" content="Snpt - ✂️A simple snippets app." />
           <meta property="og:url" content="https://snpt.netlify.com/" />
           <meta property="og:type" content="website" />
-          <meta property="og:description" content="Code snippets made easy." />
+          <meta property="og:description" content="✂️A simple snippets app." />
           <meta property="og:image" content={Snpt} />
 
           <meta property="twitter:card" content="summary_large_image" />
@@ -78,7 +78,7 @@ class App extends Component {
           <meta property="twitter:title" content="Snpt" />
           <meta
             property="twitter:description"
-            content="Code snippets made easy."
+            content="✂️A simple snippets app."
           />
           <meta property="twitter:image" content={Snpt} />
 
