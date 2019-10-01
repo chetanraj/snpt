@@ -45,6 +45,15 @@ const __constructorWithState = `constructor(props) {
 const __state = `this.state = {}`;
 const __setState = `this.setState({ })`;
 
+const __ReactStatelessComponent = `import React from 'react'
+
+const Snpt = (props) => {
+  return (
+    <div>
+    
+    </div>
+  )
+}`;
 /*
  * Hook
  */
@@ -235,6 +244,10 @@ export const types = {
     'components, state': {
       component: {
         code: __ReactComponent,
+        type: 'react'
+      },
+      componentStateless: {
+        code: __ReactStatelessComponent,
         type: 'react'
       },
       constructor: {
