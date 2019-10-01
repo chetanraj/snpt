@@ -169,6 +169,161 @@ export default {
 <style lang="scss" scoped>
 
 </style>`;
+
+const __VueImpComponentsIntoComponents = `<template>
+  <div>
+    <custom-component />
+  </div>
+</template>
+
+<script>
+import CustomComponent from './components/CustomComponent'
+export default {
+  name: 'ParentComponent',
+  components: {
+    CustomComponent
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>`;
+
+const __VueImpComponentsIntoComponentsWithProps = `<template>
+  <div>
+    <custom-component v-bind:data='{key: "value"}' />
+  </div>
+</template>
+
+<script>
+import CustomComponent from './components/CustomComponent'
+export default {
+  name: 'ParentComponent',
+  components: {
+    CustomComponent
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>`;
+
+const __VueComponent = `<template>
+  <div>
+
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'CustomComponent'
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>`;
+
+const __VueComponentWithData = `<template>
+  <div>
+    <h1>{{this.dataKey}}</h1>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'CustomComponent',
+  data () {
+    return {
+      dataKey: "dataValue"
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>`;
+
+const __VueComponentWithMethod = `<template>
+  <div>
+    <button v-on:click="methodName()">Click Me</button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'CustomComponent',
+  methods: {
+    methodName: () => {
+
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>`;
+
+const __VueComponentWithProps = `<template>
+  <div>
+    {{data.key}}
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'CustomComponent',
+  props: {
+    data: {
+        type: Object,
+        default: () => ({})
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>`;
+
+const __VueComponentWithDataMethodProps = `<template>
+  <div>
+    <h1>{{this.dataKey}}</h1>
+    {{data.key}}
+    <button v-on:click="methodName()">Click Me</button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'CustomComponent',
+  data: () => {
+    return {
+      dataKey: "dataValue"
+    }
+  },
+  methods: {
+    methodName: () => {
+
+    }
+  },
+  props: {
+    data: {
+        type: Object,
+        default: () => ({})
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>`;
+
 /*
  * Axios
  */
@@ -323,10 +478,41 @@ export const types = {
   vue: {
     import: {
       vue: {
-        code: __VueImp
+        code: __VueImp,
+        type: 'vue'
       },
-      'default-vue': {
+      defaultVue: {
         code: __VueDefault
+      },
+      importComponent: {
+        code: __VueImpComponentsIntoComponents,
+        type: 'vue'
+      },
+      importComponentWithProp: {
+        code: __VueImpComponentsIntoComponentsWithProps,
+        type: 'vue'
+      }
+    },
+    components: {
+      component: {
+        code: __VueComponent,
+        type: 'vue'
+      },
+      componentWithData: {
+        code: __VueComponentWithData,
+        type: 'vue'
+      },
+      componentWithMethod: {
+        code: __VueComponentWithMethod,
+        type: 'vue'
+      },
+      componentWithProps: {
+        code: __VueComponentWithProps,
+        type: 'vue'
+      },
+      componentWithDataMethodProps: {
+        code: __VueComponentWithDataMethodProps,
+        type: 'vue'
       }
     }
   },
