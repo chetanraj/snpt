@@ -9,7 +9,7 @@ export default class Snippets extends Component {
 
   copyToClipboard(code) {
     const textField = document.createElement('textarea');
-    textField.innerText = code;
+    textField.innerHTML = code;
     document.body.appendChild(textField);
     textField.select();
     document.execCommand('copy');
