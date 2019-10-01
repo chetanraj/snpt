@@ -51,6 +51,11 @@ const __setState = `this.setState({ })`;
 
 const __useState = `useState(state, setState, initialValue)`;
 
+const __useCallback = `useCallback(() => {
+  callback
+}, [input])
+`;
+
 /*
  * Redux
  */
@@ -273,6 +278,10 @@ export const types = {
     hooks: {
       useState: {
         code: __useState,
+        type: 'react'
+      },
+      useCallback: {
+        code: __useCallback,
         type: 'react'
       }
     }
