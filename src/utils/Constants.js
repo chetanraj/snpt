@@ -237,7 +237,7 @@ export const types = {
       configureStore: {
         code: __ReduxConfigureStore
       },
-      addToReact: {
+      addToReactApp: {
         code: __ReduxAddToReact
       },
       simpleActionCreator: {
