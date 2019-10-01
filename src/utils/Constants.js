@@ -270,7 +270,7 @@ export const types = {
         type: 'react'
       }
     },
-    hook: {
+    hooks: {
       useState: {
         code: __useState,
         type: 'react'
