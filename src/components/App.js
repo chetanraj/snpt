@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import Snippets from './Snippets';
+import Notification from './Notification';
 import { frameworks, types } from '../utils/Constants';
 import { IconReact, IconVue } from '../icons/';
 import '../scss/snpt.scss';
 import dracula from 'prism-react-renderer/themes/nightOwl';
 
 const defaultCode = `
-/* 
+/*
  * Click on any button on the left
  * Your snpt will appear here
  *
@@ -20,7 +21,6 @@ class App extends Component {
     super(props);
 
     this.state = {
-      footerMsg: '',
       framework: 'react',
       code: defaultCode,
       types: []
@@ -34,15 +34,10 @@ class App extends Component {
 
   setCode(snpt) {
     this.setState({
-      code: defaultCode + snpt,
-      footerMsg: 'Snpt copied to clipboard 🎉'
+      code: defaultCode + snpt
     });
 
-    setTimeout(() => {
-      this.setState({
-        footerMsg: ''
-      });
-    }, 3000);
+    this.notification.showNotification();
   }
 
   setFramework(framework) {
@@ -57,6 +52,7 @@ class App extends Component {
   render() {
     return (
       <div className="snpt">
+        <Notification onRef={ref => (this.notification = ref)} />
         <div className="container">
           <div className="snippets">
             <header>
