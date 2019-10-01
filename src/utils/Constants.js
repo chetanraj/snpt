@@ -46,6 +46,12 @@ const __state = `this.state = {}`;
 const __setState = `this.setState({ })`;
 
 /*
+ * Hook
+ */
+
+const __useState = `useState(state, setState, initialValue)`;
+
+/*
  * Redux
  */
 const __ReduxImp = `import { connect } from 'react-redux';`;
@@ -261,6 +267,12 @@ export const types = {
       },
       componentWillUnmount: {
         code: __ComponentWillUnMount,
+        type: 'react'
+      }
+    },
+    hooks: {
+      useState: {
+        code: __useState,
         type: 'react'
       }
     }
