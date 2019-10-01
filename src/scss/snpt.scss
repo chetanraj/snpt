@@ -13,6 +13,10 @@ body {
   padding-top: 0;
 }
 
+.snpt {
+  position: relative;
+}
+
 .container {
   display: flex;
   width: 100%;
@@ -30,7 +34,7 @@ body {
 
 .snippets {
   background: #f2f2f2;
-  height: calc(100vh - 4em);
+  height: 100vh;
 }
 
 .container pre {
@@ -97,16 +101,63 @@ body {
   outline: none;
 }
 
-#footer {
-  height: 50px;
-  background: #ccc;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  width: 49.8%;
-  line-height: 50px;
-  text-indent: 1em;
+.notification {
+  height: 40px;
+  background: #fff;
+  position: absolute;
+  right: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  transition: height 5ms;
+  border-radius: 5px;
+}
+
+.not-active {
+  animation: slideIn .1s ease-in;
+  top: 10px;
+}
+
+.not-inactive {
+  animation: slideOut .1s ease-out;
+  top: -40px;
+}
+
+@keyframes slideIn {
+  from {
+    top: -40px;
+  }
+  to {
+    top: 10px;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    top: 10px;
+  }
+  to {
+    top: -40px;
+  }
+}
+
+@keyframes mobileSlideIn {
+  from {
+    bottom: -40px;
+  }
+  to {
+    bottom: 10px;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    bottom: 10px;
+  }
+  to {
+    bottom: -40px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -119,7 +170,17 @@ body {
     flex-wrap: wrap;
   }
 
-  #footer {
-    display: none;
+  .notification {
+    top: auto;
+  }
+
+  .not-active {
+    animation: mobileSlideIn .1s ease-in;
+    bottom: 10px;
+  }
+
+  .not-inactive {
+    animation: mobileSlideOut .1s ease-out;
+    bottom: -40px;
   }
 }
