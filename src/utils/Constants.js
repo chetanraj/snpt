@@ -139,7 +139,19 @@ export default connect(
  * Vue
  */
 const __VueImp = `import Vue from 'vue';`;
+const __VueDefault = `<template>
+  
+</template>
 
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>`;
 /*
  * Axios
  */
@@ -285,6 +297,9 @@ export const types = {
     import: {
       vue: {
         code: __VueImp
+      },
+      'default-vue': {
+        code: __VueDefault
       }
     }
   },
