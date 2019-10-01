@@ -45,6 +45,25 @@ const __constructorWithState = `constructor(props) {
 const __state = `this.state = {}`;
 const __setState = `this.setState({ })`;
 
+const __useEffect = `
+import React, { useEffect } from 'react';
+
+useEffect(()=>{
+  //replace the componentDidMount
+}, []);
+
+useEffect(()=>{
+  //replace the componentDidUpdate listening updated at "yourVariableOrState"
+}, [yourVariableOrState]);
+
+useEffect(()=>{
+  return () => {
+    //replace componentWillUnmount
+  } 
+});
+
+`;
+
 /*
  * Redux
  */
@@ -261,6 +280,10 @@ export const types = {
       },
       componentWillUnmount: {
         code: __ComponentWillUnMount,
+        type: 'react'
+      },
+      useEffect: {
+        code: __useEffect,
         type: 'react'
       }
     }
