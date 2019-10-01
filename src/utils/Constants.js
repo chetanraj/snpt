@@ -140,7 +140,9 @@ export default connect(
  */
 const __VueImp = `import Vue from 'vue';`;
 const __VueDefault = `<template>
-  
+  <div>
+
+  </div>
 </template>
 
 <script>
@@ -149,7 +151,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>`;
 /*
