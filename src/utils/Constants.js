@@ -23,26 +23,27 @@ const __ReactComponentWithInterfaces = `
 import React as * from 'react';
 
 interface exampleState {
-  state1 : string;
+  state1: string;
   state2: boolean;
-  state3 : any;
-  }
+  state3: any;
+}
   
-  interface exampleProps {
+interface exampleProps {
   props1: string;
   props2: boolean;
   prop3: any;
-  }
+}
   
-  class ExampleComponent extends React.Component<exampleProps,exampleState> {
+class ExampleComponent extends React.Component<exampleProps,exampleState> {
   constructor(props) {
-      super(props);
-      this.state = {
-        state1: "",
-        state2: false,
-        state3: () => {}
-      };
-  }`;
+    super(props);
+    this.state = {
+      state1: "",
+      state2: false,
+      state3: () => {}
+    };
+  }
+}`;
 
 const __ComponentDidMount = `componentDidMount = () => {
   
