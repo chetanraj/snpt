@@ -163,16 +163,16 @@ export default {
 
 const __VueImpComponentsIntoComponents = `<template>
   <div>
-    <custom-component />
+    <snpt />
   </div>
 </template>
 
 <script>
-import CustomComponent from './components/CustomComponent'
+import Snpt from './components/Snpt'
 export default {
   name: 'ParentComponent',
   components: {
-    CustomComponent
+    Snpt
   },
 }
 </script>
@@ -183,16 +183,16 @@ export default {
 
 const __VueImpComponentsIntoComponentsWithProps = `<template>
   <div>
-    <custom-component v-bind:data='{key: "value"}' />
+    <snpt v-bind:data='{key: "value"}' />
   </div>
 </template>
 
 <script>
-import CustomComponent from './components/CustomComponent'
+import Snpt from './components/Snpt'
 export default {
   name: 'ParentComponent',
   components: {
-    CustomComponent
+    Snpt
   },
 }
 </script>
@@ -209,7 +209,7 @@ const __VueComponent = `<template>
 
 <script>
 export default {
-  name: 'CustomComponent'
+  name: 'Snpt'
 }
 </script>
 
@@ -225,7 +225,7 @@ const __VueComponentWithData = `<template>
 
 <script>
 export default {
-  name: 'CustomComponent',
+  name: 'Snpt',
   data () {
     return {
       dataKey: "dataValue"
@@ -246,7 +246,7 @@ const __VueComponentWithMethod = `<template>
 
 <script>
 export default {
-  name: 'CustomComponent',
+  name: 'Snpt',
   methods: {
     methodName: () => {
 
@@ -267,7 +267,7 @@ const __VueComponentWithProps = `<template>
 
 <script>
 export default {
-  name: 'CustomComponent',
+  name: 'Snpt',
   props: {
     data: {
         type: Object,
@@ -291,7 +291,7 @@ const __VueComponentWithDataMethodProps = `<template>
 
 <script>
 export default {
-  name: 'CustomComponent',
+  name: 'Snpt',
   data: () => {
     return {
       dataKey: "dataValue"
