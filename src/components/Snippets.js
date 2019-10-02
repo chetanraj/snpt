@@ -32,6 +32,7 @@ export default class Snippets extends Component {
                   <Button
                     label={subtype}
                     onClick={() => this.setCode(__subtype)}
+                    key={subtype}
                   />
                 );
               })}
