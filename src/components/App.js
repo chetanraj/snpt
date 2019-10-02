@@ -53,7 +53,7 @@ class App extends Component {
                         this.state.framework === framework ? 'active' : ''
                       }
                       onClick={() => this.setFramework(framework)}
-                      key={Math.random()}>
+                      key={framework}>
                       {framework}
                     </li>
                   );
