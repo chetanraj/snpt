@@ -3,7 +3,6 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 import Snippets from './Snippets';
 import Notification from './Notification';
 import { frameworks, types } from '../utils/Constants';
-import { IconReact, IconVue } from '../icons/';
 import '../scss/snpt.scss';
 import dracula from 'prism-react-renderer/themes/nightOwl';
 
@@ -27,11 +26,6 @@ class App extends Component {
     };
   }
 
-  icons = {
-    react: IconReact,
-    vue: IconVue
-  };
-
   setCode(snpt) {
     this.setState({
       code: defaultCode + snpt
@@ -42,11 +36,6 @@ class App extends Component {
 
   setFramework(framework) {
     this.setState({ framework });
-  }
-
-  renderIcon(framework) {
-    // const TagName = this.icons[framework]
-    return null;
   }
 
   render() {
@@ -64,8 +53,7 @@ class App extends Component {
                         this.state.framework === framework ? 'active' : ''
                       }
                       onClick={() => this.setFramework(framework)}
-                      key={Math.random()}>
-                      {this.renderIcon(framework)}
+                      key={framework}>
                       {framework}
                     </li>
                   );

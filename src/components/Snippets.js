@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from './Button';
 
 export default class Snippets extends Component {
   setCode(category) {
@@ -17,25 +18,21 @@ export default class Snippets extends Component {
   }
 
   render() {
+    const { types } = this.props;
+
     return (
       <>
-        {Object.keys(this.props.types).map(framework => {
+        {Object.keys(types).map(framework => {
           return (
-            <div key={Math.random()}>
-              <h2 key={Math.random()}>{framework}</h2>
-              {Object.keys(this.props.types[framework]).map(subtype => {
+            <div key={framework}>
+              <h2>{framework}</h2>
+              {Object.keys(types[framework]).map(subtype => {
+                const __subtype = types[framework][subtype];
                 return (
-                  <>
-                    <button
-                      id={subtype}
-                      key={Math.random()}
-                      className="btn-white"
-                      onClick={() =>
-                        this.setCode(this.props.types[framework][subtype])
-                      }>
-                      {subtype}
-                    </button>
-                  </>
+                  <Button
+                    label={subtype}
+                    onClick={() => this.setCode(__subtype)}
+                  />
                 );
               })}
             </div>
