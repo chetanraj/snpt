@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from './Button';
 
 export default class Snippets extends Component {
   setCode(category) {
@@ -28,13 +29,10 @@ export default class Snippets extends Component {
               {Object.keys(types[framework]).map(subtype => {
                 const __subtype = types[framework][subtype];
                 return (
-                  <button
-                    id={subtype}
-                    key={`${framework}-${subtype}`}
-                    className="btn-white"
-                    onClick={() => this.setCode(__subtype)}>
-                    {subtype}
-                  </button>
+                  <Button
+                    label={subtype}
+                    onClick={() => this.setCode(__subtype)}
+                  />
                 );
               })}
             </div>
