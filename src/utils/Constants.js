@@ -63,6 +63,20 @@ useEffect(()=>{
 });
 
 `;
+const __ReactStatelessComponent = `import React from 'react'
+
+const Snpt = (props) => {
+  return (
+    <div>
+    
+    </div>
+  )
+}`;
+/*
+ * Hook
+ */
+
+const __useState = `useState(state, setState, initialValue)`;
 
 /*
  * Redux
@@ -173,6 +187,161 @@ export default {
 <style lang="scss" scoped>
 
 </style>`;
+
+const __VueImpComponentsIntoComponents = `<template>
+  <div>
+    <snpt />
+  </div>
+</template>
+
+<script>
+import Snpt from './components/Snpt'
+export default {
+  name: 'ParentComponent',
+  components: {
+    Snpt
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>`;
+
+const __VueImpComponentsIntoComponentsWithProps = `<template>
+  <div>
+    <snpt v-bind:data='{key: "value"}' />
+  </div>
+</template>
+
+<script>
+import Snpt from './components/Snpt'
+export default {
+  name: 'ParentComponent',
+  components: {
+    Snpt
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>`;
+
+const __VueComponent = `<template>
+  <div>
+
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Snpt'
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>`;
+
+const __VueComponentWithData = `<template>
+  <div>
+    <h1>{{this.dataKey}}</h1>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Snpt',
+  data () {
+    return {
+      dataKey: "dataValue"
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>`;
+
+const __VueComponentWithMethod = `<template>
+  <div>
+    <button v-on:click="methodName()">Click Me</button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Snpt',
+  methods: {
+    methodName: () => {
+
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>`;
+
+const __VueComponentWithProps = `<template>
+  <div>
+    {{data.key}}
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Snpt',
+  props: {
+    data: {
+        type: Object,
+        default: () => ({})
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>`;
+
+const __VueComponentWithDataMethodProps = `<template>
+  <div>
+    <h1>{{this.dataKey}}</h1>
+    {{data.key}}
+    <button v-on:click="methodName()">Click Me</button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Snpt',
+  data: () => {
+    return {
+      dataKey: "dataValue"
+    }
+  },
+  methods: {
+    methodName: () => {
+
+    }
+  },
+  props: {
+    data: {
+        type: Object,
+        default: () => ({})
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>`;
+
 /*
  * Axios
  */
@@ -250,6 +419,10 @@ export const types = {
         code: __ReactComponent,
         type: 'react'
       },
+      componentStateless: {
+        code: __ReactStatelessComponent,
+        type: 'react'
+      },
       constructor: {
         code: __constructor,
         type: 'react'
@@ -284,6 +457,12 @@ export const types = {
       },
       useEffect: {
         code: __useEffect,
+        type: 'react'
+      }
+    },
+    hooks: {
+      useState: {
+        code: __useState,
         type: 'react'
       }
     }
@@ -321,10 +500,41 @@ export const types = {
   vue: {
     import: {
       vue: {
-        code: __VueImp
+        code: __VueImp,
+        type: 'vue'
       },
-      'default-vue': {
+      defaultVue: {
         code: __VueDefault
+      },
+      importComponent: {
+        code: __VueImpComponentsIntoComponents,
+        type: 'vue'
+      },
+      importComponentWithProp: {
+        code: __VueImpComponentsIntoComponentsWithProps,
+        type: 'vue'
+      }
+    },
+    components: {
+      component: {
+        code: __VueComponent,
+        type: 'vue'
+      },
+      componentWithData: {
+        code: __VueComponentWithData,
+        type: 'vue'
+      },
+      componentWithMethod: {
+        code: __VueComponentWithMethod,
+        type: 'vue'
+      },
+      componentWithProps: {
+        code: __VueComponentWithProps,
+        type: 'vue'
+      },
+      componentWithDataMethodProps: {
+        code: __VueComponentWithDataMethodProps,
+        type: 'vue'
       }
     }
   },
