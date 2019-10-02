@@ -23,20 +23,18 @@ export default class Snippets extends Component {
       <>
         {Object.keys(types).map(framework => {
           return (
-            <div key={Math.random()}>
-              <h2 key={Math.random()}>{framework}</h2>
+            <div key={framework}>
+              <h2>{framework}</h2>
               {Object.keys(types[framework]).map(subtype => {
                 const __subtype = types[framework][subtype];
                 return (
-                  <>
-                    <button
-                      id={subtype}
-                      key={Math.random()}
-                      className="btn-white"
-                      onClick={() => this.setCode(__subtype)}>
-                      {subtype}
-                    </button>
-                  </>
+                  <button
+                    id={subtype}
+                    key={`${framework}-${subtype}`}
+                    className="btn-white"
+                    onClick={() => this.setCode(__subtype)}>
+                    {subtype}
+                  </button>
                 );
               })}
             </div>
