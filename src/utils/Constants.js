@@ -169,6 +169,80 @@ export default {
 <style lang="scss" scoped>
 
 </style>`;
+const __VueAutoFocus = `<template>
+  <input v-auto-focus type="email" placeholder="I'm auto-focused!">
+</template>
+
+<script>
+Vue.directive('auto-focus', {
+  inserted: el => el.focus()
+})
+</script>`;
+const __VueClickAway = `<template>
+  <div v-clickaway="hideMe">Hide this</div>
+</template>
+
+<script>
+Vue.directive('clickaway', {
+  bind (el, { value }) {
+    if (typeof value !== 'function') {
+      console.warn(`Expect a function, got ${value}`)
+      return
+    }
+
+    document.addEventListener('click', e => el.contains(e.target) || value())
+  }
+})
+
+export default {
+  methods: {
+    hideMe () {
+      // logic 
+    }
+  }
+}
+</script>`;
+const __VueLongPress = `<template>
+  <button v-longpress='showOptions'>Hold me for a while</button>
+</template>
+
+<script>
+const PRESS_TIMEOUT = 1000
+
+Vue.directive('longpress', {
+  bind: function (el, { value }, vNode) {
+    if (typeof value !== 'function') {
+      console.warn(`Expect a function, got ${value}`)
+      return
+    }
+
+    let pressTimer = null
+
+    const start = e => {
+      if (e.type === 'click' && e.button !== 0) {
+        return;
+      }
+
+      if (pressTimer === null) {
+        pressTimer = setTimeout(() => value(e), PRESS_TIMEOUT)
+      }
+    }
+
+    const cancel = () => {
+      if (pressTimer !== null) {
+        clearTimeout(pressTimer)
+        pressTimer = null
+      }
+    }
+
+    ;['mousedown', 'touchstart'].forEach(e => el.addEventListener(e, start))
+    ;['click', 'mouseout', 'touchend', 'touchcancel'].forEach(e => el.addEventListener(e, cancel))
+  }
+})
+</script>`;
+const __VueBind=`<div v-bind:class="someClassObject"></div>`;
+const __VueHtml=`<p v-html="'<strong>this is an example of a string in some text</strong>'"></p>`;
+const __VueOnSubmitPrevent=`<button v-on:submit.prevent="onSubmit"></button>`;
 /*
  * Axios
  */
@@ -327,6 +401,24 @@ export const types = {
       },
       'default-vue': {
         code: __VueDefault
+      },
+      'auto-focus-directive': {
+        code: __VueAutoFocus
+      },
+      'click-away-directive': {
+        code: __VueClickAway
+      },
+      'long-press-directive': {
+        code: __VueLongPress
+      },
+      'html-directive': {
+        code: __VueHTML
+      },
+      'bind-directive': {
+        code: __VueBind
+      },
+      'submit-prevent-directive': {
+        code: __VueOnSubmitPrevent
       }
     }
   },
