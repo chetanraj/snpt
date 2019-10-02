@@ -45,24 +45,6 @@ const __constructorWithState = `constructor(props) {
 const __state = `this.state = {}`;
 const __setState = `this.setState({ })`;
 
-const __useEffect = `
-import React, { useEffect } from 'react';
-
-useEffect(()=>{
-  //replace the componentDidMount
-}, []);
-
-useEffect(()=>{
-  //replace the componentDidUpdate listening updated at "yourVariableOrState"
-}, [yourVariableOrState]);
-
-useEffect(()=>{
-  return () => {
-    //replace componentWillUnmount
-  } 
-});
-
-`;
 const __ReactStatelessComponent = `import React from 'react'
 
 const Snpt = (props) => {
@@ -72,16 +54,44 @@ const Snpt = (props) => {
     </div>
   )
 }`;
+
 /*
- * Hook
+ * Hooks
  */
 
-const __useState = `useState(state, setState, initialValue)`;
+const __useState = `const [state, setstate] = useState(initialState)`;
 
-const __useCallback = `useCallback(() => {
-  callback
-}, [input])
+const __useCallback = `useCallback(
+  () => {
+    callback
+  },
+  [input],
+)
 `;
+
+const __useContext = `const context = useContext(contextValue)`;
+
+const __useDebugValue = `useDebugValue(value)`;
+
+const __useEffect = `useEffect(() => {
+  effect
+  return () => {
+    cleanup
+  };
+}, [input])`;
+
+const __useLayoutEffect = `useLayoutEffect(() => {
+  effect
+  return () => {
+    cleanup
+  };
+}, [input])`;
+
+const __useMemo = `useMemo(() => function, input)`;
+
+const __useReducer = `const [state, dispatch] = useReducer(reducer, initialState, init)`;
+
+const __useRef = `const ref = useRef(initialValue)`;
 
 /*
  * Redux
@@ -459,10 +469,6 @@ export const types = {
       componentWillUnmount: {
         code: __ComponentWillUnMount,
         type: 'react'
-      },
-      useEffect: {
-        code: __useEffect,
-        type: 'react'
       }
     },
     hooks: {
@@ -472,6 +478,34 @@ export const types = {
       },
       useCallback: {
         code: __useCallback,
+        type: 'react'
+      },
+      useContext: {
+        code: __useContext,
+        type: 'react'
+      },
+      useDebugValue: {
+        code: __useDebugValue,
+        type: 'react'
+      },
+      useEffect: {
+        code: __useEffect,
+        type: 'react'
+      },
+      useLayoutEffect: {
+        code: __useLayoutEffect,
+        type: 'react'
+      },
+      useMemo: {
+        code: __useMemo,
+        type: 'react'
+      },
+      useReducer: {
+        code: __useReducer,
+        type: 'react'
+      },
+      useRef: {
+        code: __useRef,
         type: 'react'
       }
     }
