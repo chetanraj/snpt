@@ -26,10 +26,11 @@ export default class Snippets extends Component {
           return (
             <div key={framework}>
               <h2>{framework}</h2>
-              {Object.keys(types[framework]).map(subtype => {
+              {Object.keys(types[framework]).map((subtype, index) => {
                 const __subtype = types[framework][subtype];
                 return (
                   <Button
+                    key={index}
                     label={subtype}
                     onClick={() => this.setCode(__subtype)}
                   />
