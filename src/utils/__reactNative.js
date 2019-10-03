@@ -56,7 +56,7 @@ export default {
       code: __NativeCmp,
       type: 'react-native'
     },
-    'pure-component': {
+    pureComponent: {
       code: __NativePureCmp,
       type: 'react-native'
     }
