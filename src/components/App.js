@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import * as Sentry from '@sentry/browser';
-import ReactGA from 'react-ga';
 
 //! Other Components
 import Snippets from './Snippets';
@@ -14,9 +13,6 @@ import dracula from 'prism-react-renderer/themes/nightOwl';
 Sentry.init({
   dsn: 'https://13b7c634a2d242b4b8ac670473174e72@sentry.io/1768862'
 });
-
-//! Initialise GA
-ReactGA.initialize('UA-57147313-7');
 
 const defaultCode = `
 /*
