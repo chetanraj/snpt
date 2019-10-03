@@ -16,9 +16,7 @@ Sentry.init({
 });
 
 //! Initialise GA
-function initializeReactGA() {
-  ReactGA.initialize('UA-57147313-7');
-}
+ReactGA.initialize('UA-57147313-7');
 
 const defaultCode = `
 /*
