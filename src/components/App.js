@@ -52,7 +52,11 @@ class App extends Component {
   }
 
   render() {
-    const frameworkContext = { framework: 'react', frameworks };
+    const frameworkContext = {
+      framework: 'react',
+      frameworks,
+      types: types[this.state.framework]
+    };
 
     return (
       <SnptProvider value={frameworkContext}>
@@ -61,10 +65,7 @@ class App extends Component {
           <div className="container">
             <div className="snippets">
               <Header onClick={this.setFramework.bind(this)} />
-              <Snippets
-                onClick={this.setCode.bind(this)}
-                types={types[this.state.framework]}
-              />
+              <Snippets onClick={this.setCode.bind(this)} />
               <footer id="footer">{this.state.footerMsg}</footer>
             </div>
             <>
