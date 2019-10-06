@@ -52,10 +52,13 @@ class App extends Component {
   }
 
   render() {
+    let { framework, frameworks } = this.state;
+
+    //* From the context
     const frameworkContext = {
-      framework: 'react',
+      framework,
       frameworks,
-      types: types[this.state.framework]
+      types: types[framework]
     };
 
     return (
