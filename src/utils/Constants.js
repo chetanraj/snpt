@@ -14,10 +14,4 @@ export const types = {
   'styled-components': __styledComponents
 };
 
-export const frameworks = [
-  'react',
-  'react-native',
-  'redux',
-  'vue',
-  'styled-components'
-];
+export const frameworks = ['react', 'redux', 'vue', 'styled-components'];
