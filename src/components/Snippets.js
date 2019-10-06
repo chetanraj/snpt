@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from './Button';
+import { SnptConsumer } from './SnptContext';
 
 export default class Snippets extends Component {
   setCode(category) {
@@ -18,28 +19,28 @@ export default class Snippets extends Component {
   }
 
   render() {
-    const { types } = this.props;
-
     return (
-      <>
-        {Object.keys(types).map(framework => {
-          return (
-            <div key={framework}>
-              <h2>{framework}</h2>
-              {Object.keys(types[framework]).map((subtype, index) => {
-                const __subtype = types[framework][subtype];
-                return (
-                  <Button
-                    key={index}
-                    label={subtype}
-                    onClick={() => this.setCode(__subtype)}
-                  />
-                );
-              })}
-            </div>
-          );
-        })}
-      </>
+      <SnptConsumer>
+        {props =>
+          Object.keys(props.types).map(framework => {
+            return (
+              <div key={framework}>
+                <h2>{framework}</h2>
+                {Object.keys(props.types[framework]).map((subtype, index) => {
+                  const __subtype = props.types[framework][subtype];
+                  return (
+                    <Button
+                      key={index}
+                      label={subtype}
+                      onClick={() => this.setCode(__subtype)}
+                    />
+                  );
+                })}
+              </div>
+            );
+          })
+        }
+      </SnptConsumer>
     );
   }
 }
