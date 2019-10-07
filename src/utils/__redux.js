@@ -68,6 +68,52 @@ export const reducer = (state, action) => {
   return state || initialState;
 };`;
 
+const __ReduxMapStateToProps = `const mapStateToProps = (state, ownProps) => {
+  return {
+    attr1: state.attr1,
+    attr2: ownProps.attr2
+  };
+};`;
+
+const __ReduxMapDispatchToProps = `const mapDispatchToProps = dispatch => {
+  return {
+    onSomething: () => dispatch(someAction())
+  };
+};`;
+
+const __ReduxConnect = `export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MyContainer);`;
+
+const __ReduxExtendedContainer = `
+import React from 'react';
+import { connect } from 'react-redux';
+
+const MyContainer = ({ attr1, attr2, onSomething}) = (
+  <>
+    {attr1}: <button onClick={() => onSomething()}>{attr2}</button>
+  </>
+);
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    attr1: state.attr1,
+    attr2: ownProps.attr2
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onSomething: () => dispatch(someAction())
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MyContainer);`;
+
 const __ReduxSimpleContainer = `import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -112,9 +158,23 @@ export default {
     },
     simpleReducer: {
       code: __ReduxSimpleReducer
-    },
+    }
+  },
+  container: {
     simpleContainer: {
       code: __ReduxSimpleContainer
+    },
+    mapStateToProps: {
+      code: __ReduxMapStateToProps
+    },
+    mapDispatchToProps: {
+      code: __ReduxMapDispatchToProps
+    },
+    connect: {
+      code: __ReduxConnect
+    },
+    extendedContainer: {
+      code: __ReduxExtendedContainer
     }
   }
 };
