@@ -3,10 +3,11 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 import * as Sentry from '@sentry/browser';
 
 //! Other Components
+import GitHubCorner from './GitHubCorner';
 import Header from './Header';
+import Notification from './Notification';
 import Snippets from './Snippets';
 import { SnptProvider } from './SnptContext';
-import Notification from './Notification';
 
 import { frameworks, types } from '../utils/Constants';
 
@@ -64,6 +65,7 @@ class App extends Component {
     return (
       <SnptProvider value={frameworkContext}>
         <div className="snpt">
+          <GitHubCorner />
           <Notification onRef={ref => (this.notification = ref)} />
           <div className="container">
             <div className="snippets">
