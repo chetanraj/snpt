@@ -21,13 +21,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# xml files local
-Project.xml
-codeStyleConfig.xml
-encodings.xml
-Project_Default.xml
-misc.xml
-modules.xml
-vcs.xml
-workspace.xml
