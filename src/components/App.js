@@ -70,7 +70,10 @@ class App extends Component {
           <div className="container">
             <div className="snippets">
               <Header onClick={this.setFramework.bind(this)} />
-              <Snippets onClick={this.setCode.bind(this)} />
+              <Snippets
+                framework={this.state.framework}
+                onClick={this.setCode.bind(this)}
+              />
               <footer id="footer">{this.state.footerMsg}</footer>
             </div>
             <>
