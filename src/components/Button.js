@@ -13,10 +13,20 @@ const StyledButton = styled.button`
   outline: none;
 `;
 
-const Button = props => (
-  <StyledButton id={props.label} key={Math.random()} onClick={props.onClick}>
-    {props.label}
-  </StyledButton>
-);
+export default class Button extends React.Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.props.label !== nextProps.label;
+  }
 
-export default Button;
+  render() {
+    console.log('render');
+    return (
+      <StyledButton
+        id={this.props.label}
+        key={Math.random()}
+        onClick={this.props.onClick}>
+        {this.props.label}
+      </StyledButton>
+    );
+  }
+}
