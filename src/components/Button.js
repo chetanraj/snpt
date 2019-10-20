@@ -19,7 +19,6 @@ export default class Button extends React.Component {
   }
 
   render() {
-    console.log('render');
     return (
       <StyledButton
         id={this.props.label}
