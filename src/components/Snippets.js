@@ -3,6 +3,10 @@ import Button from './Button';
 import { SnptConsumer } from './SnptContext';
 
 export default class Snippets extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.props.framework !== nextProps.framework;
+  }
+
   setCode(category) {
     //! Set the code to clipboard
     this.copyToClipboard(category.code);
