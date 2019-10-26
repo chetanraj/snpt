@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "4.2.0",
-    "@testing-library/react": "9.2.0",
+    "@testing-library/react": "9.3.0",
     "expect": "24.9.0",
     "husky": "3.0.9",
     "lint-staged": "8.2.1",
