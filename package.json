@@ -17,6 +17,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "4.2.0",
     "@testing-library/react": "9.3.0",
+    "bundlesize": "^0.18.0",
     "expect": "24.9.0",
     "husky": "3.0.9",
     "lint-staged": "8.2.1",
@@ -28,10 +29,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "test:size": "bundlesize",
     "test:snpt": "react-scripts test --watchAll --coverage",
     "test:snpt:ci": "react-scripts test --no-watch --watch=false --watchAll=false --no-watchman --forceExit",
     "eject": "react-scripts eject",
-    "prettify": "prettier --write \"**/*.js\"",
+    "prettify": "prettier --write '**/*.js'",
     "stylelint": "stylelint --fix '**/*.scss'",
     "precommit": "lint-staged"
   },

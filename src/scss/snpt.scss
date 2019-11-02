@@ -5,12 +5,28 @@ body {
   color: #222;
 }
 
+.m0 {
+  margin: 0;
+}
+
+.p0 {
+  padding: 0;
+}
+
 .mt-0 {
   margin-top: 0;
 }
 
 .pt-0 {
   padding-top: 0;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
 }
 
 .snpt {
@@ -150,6 +166,82 @@ body {
   }
 }
 
+.github-corner {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  opacity: .55;
+  transition: all 1s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .6);
+
+  &-main {
+    position: fixed;
+    padding: 1em;
+    background: white;
+    width: 30%;
+    height: auto;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  &-close {
+    background: none;
+    border: 0 none;
+    cursor: pointer;
+    position: absolute;
+    top: 1.5em;
+    right: 1em;
+  }
+}
+
+input[type=checkbox] {
+  display: none;
+
+  & + label {
+    display: block;
+    margin: .2em;
+    cursor: pointer;
+    padding: .2em;
+  }
+
+  & + label:before {
+    content: "\2714";
+    border: .1em solid #000;
+    border-radius: .2em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding-left: .2em;
+    padding-bottom: .3em;
+    margin-right: .55em;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+  }
+
+  &:checked + label:before {
+    color: #222;
+  }
+
+  &:disabled + label:before {
+    border-color: #aaa;
+  }
+}
+
+
 @media screen and (max-width: 768px) {
   .container pre,
   .snippets {
@@ -173,10 +265,4 @@ body {
     animation: mobileSlideOut .1s ease-out;
     bottom: -40px;
   }
-}
-
-.github-corner {
-  position: absolute;
-  right: 1em;
-  bottom: 1em;
 }
