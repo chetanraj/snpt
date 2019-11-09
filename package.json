@@ -21,7 +21,7 @@
     "expect": "24.9.0",
     "husky": "3.0.9",
     "lint-staged": "8.2.1",
-    "prettier": "1.18.2",
+    "prettier": "1.19.1",
     "prism-react-renderer": "1.0.2",
     "react-prism": "4.3.2",
     "stylelint": "10.1.0"
