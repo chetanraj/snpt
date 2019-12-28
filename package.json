@@ -24,7 +24,7 @@
     "prettier": "1.19.1",
     "prism-react-renderer": "1.0.2",
     "react-prism": "4.3.2",
-    "stylelint": "10.1.0"
+    "stylelint": "12.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
