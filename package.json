@@ -19,7 +19,7 @@
     "@testing-library/react": "9.4.0",
     "bundlesize": "0.18.0",
     "expect": "24.9.0",
-    "husky": "4.0.6",
+    "husky": "4.0.7",
     "lint-staged": "8.2.1",
     "prettier": "1.19.1",
     "prism-react-renderer": "1.0.2",
