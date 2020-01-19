@@ -8,7 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "@sentry/browser": "5.11.0",
-    "node-sass": "4.13.0",
+    "node-sass": "4.13.1",
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "react-scripts": "3.3.0",
