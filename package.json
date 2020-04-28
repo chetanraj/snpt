@@ -11,7 +11,7 @@
     "node-sass": "4.13.0",
     "react": "16.11.0",
     "react-dom": "16.11.0",
-    "react-scripts": "3.3.0",
+    "react-scripts": "3.4.1",
     "styled-components": "4.4.0"
   },
   "devDependencies": {
