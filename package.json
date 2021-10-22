@@ -12,7 +12,8 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-scripts": "3.3.0",
-    "styled-components": "4.4.0"
+    "styled-components": "4.4.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "4.2.3",
@@ -35,7 +36,9 @@
     "eject": "react-scripts eject",
     "prettify": "prettier --write '**/*.js'",
     "stylelint": "stylelint --fix '**/*.scss'",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "lint-staged": {
     "*.js": [
@@ -52,5 +55,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "snyk": true
 }
