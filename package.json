@@ -20,7 +20,7 @@
     "bundlesize": "0.18.0",
     "expect": "24.9.0",
     "husky": "4.0.6",
-    "lint-staged": "8.2.1",
+    "lint-staged": "14.0.1",
     "prettier": "2.0.5",
     "prism-react-renderer": "1.0.2",
     "react-prism": "4.3.2",
