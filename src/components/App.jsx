@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Highlight, { defaultProps } from 'prism-react-renderer';
-import * as Sentry from '@sentry/browser';
+import { Highlight, themes } from 'prism-react-renderer';
+import * as Sentry from '@sentry/react';
 
 //! Other Components
 import GitHubCorner from './GitHubCorner';
@@ -12,7 +12,6 @@ import { SnptProvider } from './SnptContext';
 import { Frameworks, types } from '../utils/Constants';
 
 import '../scss/snpt.scss';
-import dracula from 'prism-react-renderer/themes/nightOwl';
 
 //! Initialise sentry
 Sentry.init({
@@ -182,9 +181,8 @@ class App extends Component {
             <>
               <Highlight
                 className="prism-code"
-                {...defaultProps}
                 code={this.state.code}
-                theme={dracula}
+                theme={themes.nightOwl}
                 language="javascript">
                 {({
                   className,
