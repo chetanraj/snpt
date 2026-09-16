@@ -18,7 +18,7 @@
     "stylelint": "stylelint --fix '**/*.scss'"
   },
   "dependencies": {
-    "@sentry/react": "^9.46.0",
+    "@sentry/react": "^10.0.0",
     "prism-react-renderer": "^2.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
