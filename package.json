@@ -28,7 +28,7 @@
     "@testing-library/jest-dom": "^6.6.4",
     "@testing-library/react": "^16.3.0",
     "@vitejs/plugin-react": "^4.7.0",
-    "jsdom": "^26.1.0",
+    "jsdom": "^30.0.0",
     "netlify-cli": "^23.9.1",
     "prettier": "^3.6.2",
     "sass": "^1.89.2",
